@@ -67,7 +67,7 @@ def main():
      argv = sys.argv[1:]
      count = 0
      try: 
-        opts, args = getopt.getopt(argv,"u:e:o:",["username =","email =","org ="])   
+        opts, args = getopt.getopt(argv,"u:e:o:h",["username =","email =","org =","help"])   
      except: 
         print("Enter valid parameters") 
       
@@ -81,6 +81,10 @@ def main():
             count += 1
         elif opt in ['-o','--org']:
             org = arg
+        elif opt in ['-h','--help']:
+            print("-u <username> -e <email> -o <organization> -h \n"
+                  "--user --email --org --help")
+            exit()
      if count == 0:
          print("enter email or username")
          exit()
